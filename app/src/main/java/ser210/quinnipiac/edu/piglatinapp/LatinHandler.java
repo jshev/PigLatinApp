@@ -14,7 +14,7 @@ public class LatinHandler {
 
     public String getTranslation(String PLJsonStr) throws JSONException {
         JSONObject PLTransJSONObj = new JSONObject(PLJsonStr);
-        return PLTransJSONObj.getString("translated");
+        return PLTransJSONObj.getJSONObject("contents").getString("translated");
     }
 
 }

@@ -1,16 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="ser210.quinnipiac.edu.piglatinapp.PigLatinActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/wallpaperpig"/>
 
     <TextView
         android:id="@+id/pigText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Not working." />
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:text="Testing." />
+
+    <TextView
+        android:id="@+id/more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/pigText"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:textAppearance="?android:textAppearance"
+        android:text="@string/more"/>
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pigbutton"
+        android:layout_below="@+id/more"
+        android:layout_centerHorizontal="true"
+        android:onClick="onClickBack"
+        android:background="@color/transparent"/>
 
 </RelativeLayout>
+</ScrollView>

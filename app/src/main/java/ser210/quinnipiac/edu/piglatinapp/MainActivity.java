@@ -22,12 +22,15 @@ public class MainActivity extends AppCompatActivity {
     final static String url2 = "&mashape-key=Ua35jWwKEMmsh16tGNbyeJ9zdat3p1mbW60jsn8Q7tn8rJw8po";
     final LatinHandler latinhandler = new LatinHandler();
     public String english;
-    public String sentence;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (savedInstanceState != null) {
+            english = savedInstanceState.getString("english");
+        }
     }
 
     public void onClick (View view) {
@@ -45,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             BufferedReader reader = null;
             String latin = null;
             try {
-                URL url = new URL( url1 + sentence + url2);
+                URL url = new URL( url1 + strings[0] + url2);
                 urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("GET");
                 urlConnection.connect();
@@ -100,5 +103,11 @@ public class MainActivity extends AppCompatActivity {
         } else {
             return buffer.toString();
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putString("english", english);
     }
 }

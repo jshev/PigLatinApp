@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">PigLatinApp</string>
+    <string name="app_name">Pig Latin Translator</string>
+    <string name="more">More to Translate? Take a Ride Back on This Pig!</string>
+    <string name="directions">Latin may be a dead language, but Pig Latin is still alive!</string>
+    <string name="translate">Translate</string>
+    <string name="hint">Type here...</string>
 </resources>
